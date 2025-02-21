@@ -1,0 +1,92 @@
+{
+    "languages": {
+        "sv": {
+            "ui": {
+                "title": "Webbtestare med kodanalys",
+                "selectAnalysisType": "Välj analystyp",
+                "selectModel": "Välj Ollama-modell",
+                "urlPlaceholder": "Ange URL",
+                "codePlaceholder": "Eller klistra in kod här",
+                "analyzeCode": "Analysera kod",
+                "analyzeUrl": "Analysera URL",
+                "startingAnalysis": "Startar analys...",
+                "error": {
+                    "noData": "Ingen data skickades",
+                    "noCode": "Ingen kod tillhandahållen",
+                    "noUrl": "Ange en URL!",
+                    "fetchError": "Kunde inte hämta sidan",
+                    "serverError": "Fel vid tolkning av svar från servern"
+                }
+            }
+        },
+        "en": {
+            "ui": {
+                "title": "Web Tester with Code Analysis",
+                "selectAnalysisType": "Select Analysis Type",
+                "selectModel": "Select Ollama Model",
+                "urlPlaceholder": "Enter URL",
+                "codePlaceholder": "Or paste code here",
+                "analyzeCode": "Analyze Code",
+                "analyzeUrl": "Analyze URL",
+                "startingAnalysis": "Starting analysis...",
+                "error": {
+                    "noData": "No data sent",
+                    "noCode": "No code provided",
+                    "noUrl": "Please enter a URL!",
+                    "fetchError": "Failed to fetch the page",
+                    "serverError": "Error interpreting response from server"
+                }
+            }
+        }
+    },
+    "prompts": {
+        "html": {
+            "sv": {
+                "template": "Analysera den medföljande HTML-koden och ge en strukturerad bedömning enligt följande format:\n\n**Sammanfattning:**\n- Kortfattad analys av kodens kvalitet och struktur.\n- Huvudsakliga styrkor och svagheter.\n\n**SEO-analys:**\n- Bedöm titel, meta-taggar och relevans för sökmotoroptimering.\n- Analys av rubrikstruktur (h1-h6) och dess effektivitet.\n- Kontroll av alt-texter för bilder och bildoptimering.\n- Förekomst av strukturerad data (t.ex. JSON-LD, Microdata).\n\n**Semantisk HTML och tillgänglighet:**\n- Användning av semantiska element för bättre förståelse och tillgänglighet.\n- Tillgänglighetsfaktorer såsom ARIA-attribut och tabbbarhet.\n- Dokumentstruktur och logisk uppbyggnad.\n\n**Rekommendationer:**\n- Viktiga förbättringsområden med prioritet.\n- Best practices och hur de kan implementeras."
+            },
+            "en": {
+                "template": "Analyze the provided HTML code and provide a structured assessment in the following format:\n\n**Summary:**\n- Brief analysis of the code quality and structure.\n- Main strengths and weaknesses.\n\n**SEO Analysis:**\n- Evaluate title, meta tags, and relevance for search engine optimization.\n- Analysis of heading structure (h1-h6) and its effectiveness.\n- Check alt texts for images and image optimization.\n- Presence of structured data (e.g., JSON-LD, Microdata).\n\n**Semantic HTML and Accessibility:**\n- Use of semantic elements for better understanding and accessibility.\n- Accessibility factors such as ARIA attributes and tabbing.\n- Document structure and logical build-up.\n\n**Recommendations:**\n- Key areas for improvement with priority.\n- Best practices and how to implement them."
+            }
+        },
+        "css": {
+            "sv": {
+                "template": "Analysera den medföljande CSS-koden och ge en strukturerad bedömning enligt följande format:\n\n**Sammanfattning:**\n- Övergripande analys av kodens kvalitet och organisation.\n- Identifiering av styrkor och svagheter.\n\n**Prestanda och optimering:**\n- Effektivitet i selektorer och hur de påverkar renderingen.\n- Möjligheter till återanvändning och minimering av kod.\n- Möjliga förbättringar för att minska laddningstider.\n\n**Responsiv design:**\n- Användning av media queries och flexibilitet i designen.\n- Bedömning av brytpunkter och anpassning för olika skärmstorlekar.\n- Förekomst av mobilanpassade lösningar.\n\n**Rekommendationer:**\n- Prioriterade förbättringsområden.\n- Best practices för underhållbar och skalbar CSS."
+            },
+            "en": {
+                "template": "Analyze the provided CSS code and provide a structured assessment in the following format:\n\n**Summary:**\n- Overall analysis of the code quality and organization.\n- Identification of strengths and weaknesses.\n\n**Performance and Optimization:**\n- Efficiency in selectors and how they affect rendering.\n- Opportunities for reuse and minimization of code.\n- Possible improvements to reduce loading times.\n\n**Responsive Design:**\n- Use of media queries and flexibility in design.\n- Evaluation of breakpoints and adaptation for different screen sizes.\n- Presence of mobile-friendly solutions.\n\n**Recommendations:**\n- Prioritized areas for improvement.\n- Best practices for maintainable and scalable CSS."
+            }
+        },
+        "javascript": {
+            "sv": {
+                "template": "Analysera den medföljande JavaScript-koden och ge en strukturerad bedömning enligt följande format:\n\n**Sammanfattning:**\n- Övergripande analys av kodens kvalitet och organisation.\n- Huvudsakliga styrkor och svagheter.\n\n**Kodkvalitet och läsbarhet:**\n- Namngivning av variabler och funktioner.\n- Kodstruktur, modularitet och återanvändbarhet.\n\n**Prestanda och optimering:**\n- Effektivitet i loopar och funktioner.\n- Användning av asynkrona operationer där det är relevant.\n- Möjligheter till minskad minnesanvändning.\n\n**Säkerhet:**\n- Skydd mot XSS och andra säkerhetsrisker.\n- Undvikande av globala variabler och sårbarheter.\n\n**Rekommendationer:**\n- Förbättringsområden och best practices att implementera."
+            },
+            "en": {
+                "template": "Analyze the provided JavaScript code and provide a structured assessment in the following format:\n\n**Summary:**\n- Overall analysis of the code quality and organization.\n- Main strengths and weaknesses.\n\n**Code Quality and Readability:**\n- Naming of variables and functions.\n- Code structure, modularity, and reusability.\n\n**Performance and Optimization:**\n- Efficiency in loops and functions.\n- Use of asynchronous operations where relevant.\n- Opportunities to reduce memory usage.\n\n**Security:**\n- Protection against XSS and other security risks.\n- Avoidance of global variables and vulnerabilities.\n\n**Recommendations:**\n- Areas for improvement and best practices to implement."
+            }
+        },
+        "php": {
+            "sv": {
+                "template": "Analysera den medföljande PHP-koden och ge en strukturerad bedömning enligt följande format:\n\n**Sammanfattning:**\n- Övergripande kodkvalitet och struktur\n- Huvudsakliga styrkor och svagheter\n\n**Säkerhet:**\n- SQL-injektion och databashantering\n- XSS och input-validering\n- Session- och användarhantering\n\n**Prestanda:**\n- Minneshantering och resursutnyttjande\n- Cachning och optimering\n- Databasinteraktioner\n\n**Rekommendationer:**\n- Säkerhetsförbättringar\n- Prestandaoptimering\n- Best practices att implementera."
+            },
+            "en": {
+                "template": "Analyze the provided PHP code and provide a structured assessment in the following format:\n\n**Summary:**\n- Overall code quality and structure\n- Main strengths and weaknesses\n\n**Security:**\n- SQL injection and database management\n- XSS and input validation\n- Session and user management\n\n**Performance:**\n- Memory management and resource utilization\n- Caching and optimization\n- Database interactions\n\n**Recommendations:**\n- Security improvements\n- Performance optimization\n- Best practices to implement."
+            }
+        },
+        "python": {
+            "sv": {
+                "template": "Analysera den medföljande Python-koden och ge en strukturerad bedömning enligt följande format:\n\n**Sammanfattning:**\n- Kodstil och PEP 8-efterlevnad\n- Övergripande kvalitet och struktur\n\n**Kodkvalitet:**\n- Namngivning och dokumentation\n- Felhantering och exceptions\n- Modularitet och återanvändbarhet\n\n**Prestanda:**\n- Algoritmer och datastrukturer\n- Minnesanvändning\n- Optimeringsmöjligheter\n\n**Rekommendationer:**\n- Förbättringsförslag\n- Best practices att implementera."
+            },
+            "en": {
+                "template": "Analyze the provided Python code and provide a structured assessment in the following format:\n\n**Summary:**\n- Code style and PEP 8 compliance\n- Overall quality and structure\n\n**Code Quality:**\n- Naming and documentation\n- Error handling and exceptions\n- Modularity and reusability\n\n**Performance:**\n- Algorithms and data structures\n- Memory usage\n- Optimization opportunities\n\n**Recommendations:**\n- Improvement suggestions\n- Best practices to implement."
+            }
+        },
+        "java": {
+            "sv": {
+                "template": "Analysera den medföljande Java-koden och ge en strukturerad bedömning enligt följande format:\n\n**Sammanfattning:**\n- Kodstil och struktur\n- Övergripande kvalitet och effektivitet\n\n**Kodkvalitet:**\n- Namngivning och dokumentation\n- Kodstruktur och modularitet\n- Felhantering och exceptions\n\n**Prestanda:**\n- Algoritmer och datastrukturer\n- Minnesanvändning och optimering\n- Optimeringsmöjligheter\n\n**Rekommendationer:**\n- Förbättringsförslag\n- Best practices att implementera."
+            },
+            "en": {
+                "template": "Analyze the provided Java code and provide a structured assessment in the following format:\n\n**Summary:**\n- Code style and structure\n- Overall quality and efficiency\n\n**Code Quality:**\n- Naming and documentation\n- Code structure and modularity\n- Error handling and exceptions\n\n**Performance:**\n- Algorithms and data structures\n- Memory usage and optimization\n- Optimization opportunities\n\n**Recommendations:**\n- Improvement suggestions\n- Best practices to implement."
+            }
+        }
+    }
+}
