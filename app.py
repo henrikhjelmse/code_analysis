@@ -6,9 +6,12 @@ import json
 import os
 
 #Version
-VERSION = "2025-02-21:0"
-
-
+VERSION = "2025-06:0"
+#configurations edit this file to change settings
+listen_to_domain = "http://localhost:5051"
+#ollama config
+ollama_host = os.environ.get("OLLAMA_HOST", "http://localhost:11434")
+ollama_api_key = os.environ.get("OLLAMA_API_KEY", None)
 
 #start flask app
 app = Flask(__name__)
@@ -85,15 +88,20 @@ def index():
         lang=lang
     ))
     
-    # Set language cookie
-    response.set_cookie('lang', lang)
+    # Set language cookie with HttpOnly, Secure, and domain attributes
+    response.set_cookie(
+        'lang', lang,
+        httponly=True,
+        secure=True,
+        domain=listen_to_domain.replace("http://", "").replace("https://", "").split(":")[0]  # extract domain only
+    )
     return response
 
 @app.route("/analyze", methods=["POST", "OPTIONS"])
 def analyze():
     if request.method == "OPTIONS":
         return "", 200, {
-            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Origin": listen_to_domain,
             "Access-Control-Allow-Methods": "POST, OPTIONS",
             "Access-Control-Allow-Headers": "Content-Type"
         }
@@ -101,7 +109,7 @@ def analyze():
     try:
         # Basic CORS headers
         headers = {
-            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Origin": listen_to_domain,
             "Content-Type": "text/event-stream",
             "Cache-Control": "no-cache",
             "Connection": "keep-alive"
